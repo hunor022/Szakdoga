@@ -1,0 +1,155 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{graphicx, animate}
+\graphicspath{ {./images/} }
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Jegyzetek}
+\author{Kovács Hunor}
+
+\begin{document}
+	\maketitle
+	
+	\section{Feladatkiírás}
+	
+	\begin{enumerate}
+		
+		\item Tárja fel a mezőgazdasági gépeken használatos szenzortechnikai, adatfeldolgozási és visszajelzési megoldásokat!
+		\item Válasszon a szálastakarmány felszedő adapteren alkalmazható fordulatszám meghatározására alkalmazható szenzort!
+		\item Tervezzen az adapterhez és a szenzorhoz megfelelő adatfeldolgozó és visszajelző rendszert!
+		\item Vizsgálja meg a tervezett mérőrendszer alkalmazási lehetőségeit üzembiztonsági és diagnosztikai feladatok esetén!
+		\item Foglalja össze a kapott eredményeket magyar és angol nyelven.
+	\end{enumerate}
+	
+	\section{Kutatómunka}
+	\subsection{kiindulás}
+	\begin{itemize}
+		\item forgó mozgás milyen szenzorokkal mérhető?
+		\item milyen fizikai mennyiséget lehet mérni? (szögpozíció, szögsebesség)
+		\item milyen alapvető eszköztípusok vannak erre? (pl. enkóderek, tachogenerátor)
+		\item milyen fizikai elven működnek ezek az eszközök? (optikai, kapacitív, mágneses, induktív stb.)
+		\item a szenzorok milyen villamos jelet állítanak elő? milyen ipari szabványok vannak erre?
+		konkrét, kereskedelmi forgalomban kapható eszközök kivitele (rögzítés iránya, tengelyméretek)
+	\end{itemize}
+	
+	\subsection{később fontos lehet}
+	\begin{itemize}
+		\item milyen eszközzel digitalizáljuk majd a szenzorok jeleit? (PLC, mikrovezérlő, ipari PC stb)
+		\item milyen módon továbbítsuk ezeket a mért adatokat? (buszok, protokollok, pl. soros port, CAN busz stb.)
+	\end{itemize}
+	
+	\subsection{Paraméterek}
+	\begin{itemize}
+		\item Feszültség
+		\item Fogaskerekek anyaga
+		\item Fordulatszám intervallum
+		
+	\end{itemize}
+	
+	
+	
+	\section{Forgó mozgás szenzorai}
+	
+	\subsection{Handbook of Modern Sensors: Physics, Designs, and Applications}
+	\subsubsection{Displacement/position sensors}
+	Design guidelines:
+	\begin{enumerate}
+		\item How big is the displacement and of what type (linear, circular)?
+		\item What resolution and accuracy are required?
+		\item What the measured (moving) object is made of (metal, plastic, fluid, ferromagnetic, etc.)?
+		\item How much space is available for mounting the detector?
+		\item What are the environmental conditions (humidity, temperature, sources of
+		interference, vibration, corrosive materials, etc.)?
+		\item How much power is available for the sensor?
+		\item How much mechanical wear can be expected over the life time of the machine?
+		\item 8. What is the production quantity of the sensing assembly (limited number,
+		medium volume, mass production)?
+		\item 9. What is the target cost of the detecting assembly?
+	\end{enumerate}
+	
+	Potenciométeres elfordulás mérés - nem alkalmas több fordulat megtételére kialakítása miatt
+	Kapacitív szenzorok - szennyeződések miatt nem alkalmas
+	Induktív/Mágneses szenzorok
+	\begin{itemize}
+		\item LVDT/RVDT - nem jo, kontakt alapu
+		\item Örvényáram szenzor (Eddy current) - vastag testek detektálása (detektor távolságnál vastagabb kell legyen a test), por/olaj álló, felületi hibák, vastagságok mérésére alkalmas (overkill probs)
+		\item Transverse Inductive Sensor - kis elmozdulás mérése (overkill)
+		\item Hall effektus szenzorok - egy bizonyos távolságon (release point) belül lévő mágneseket érzékelnek
+		\item Magnetoresistive sensors - mágneses forrás szükséges, nem mindegy milyen tengelyei hatnak a szenzorra, nagy pontosságú párhuzamosság kell hozzá (nem valószínű hogy jó ide)
+		\begin{figure}[h]
+			\caption{fogaskerék mérő elrendezés}
+			\centering
+			\includegraphics[width=0.7\textwidth]{magnetoresistive_toothed_wheel}
+		\end{figure}
+		\item Magnetostrictive detector - cső és gyűrűmágnes kell hozzá (nem jó)
+	\end{itemize}
+	Optikai szenzorok - olaj és porszennyezés miatt nem is jön szóba
+	Radarok, pointing deviceok
+	
+	
+	\subsubsection {Velocity and Acceleration}
+	Konkretan csak a gyorsulasrol volt szo
+	
+	\subsection{Alan S Morris, Reza Langari Ph.D. - Measurement and Instrumentation}
+	
+	\subsubsection{Rotational Motion Transducers / Rotational Velocity}
+	
+	Digital Tachometers - a tengely körüli jelöléseket érzékeljük, a sűrűségük és a szenzor órajele határozza meg a felbontást és az érzékenységet
+	
+	\begin{itemize}
+		\item Optical - a tárcsán/tengelyen visszaverő sávok vagy lyukak (egyik oldalon emitter másikon detektor) - érzékeny por és olaj szennyezésre
+		\item variable reluctance sensors
+		\begin{itemize}
+			\item ferromágneses anyagok (vas) érzékelése
+			\item fogaskeréken a távolodó és közeledő fogak megváltoztatják a mágneses fluxust amit mér a szenzor
+			\item van egy fordulatszám limit (?? - jóval kevesebb mint 10 000 rpm)
+		\end{itemize}
+		\begin{figure}[h]
+			\caption{fogaskerék mérő elrendezés}
+			\centering
+			\includegraphics[width=0.7\textwidth]{images/variable reluctance sensor.png}
+		\end{figure}
+		\item Hall effektus szenzor:  fogaskerekeknél a szenzor mögött egy állandó mágneses tér nagyobb amikor a fogak közötti hely van a szenzor előtt, kisebb a fogak eltérítik a mágneses tér egy részét, a szenzor ez alapján ad le különböző feszültségeket
+	\end{itemize}
+	Stroboszkópos szenzorok - fény alapúak, nem alkalmasak \\
+	analóg mérők - kevésbé pontosak\\
+	be kell építeni\\
+	hasonló a helyzet a giroszkópok, optikus szál giroszkópok, és mems (mikroelektromechanikai rendszerű) giroszkópok esetén\\
+	\\
+	pozíció / gyorsulás általi számolás pontatlan\\
+	\\
+	kalibráció: stroboszkópos fordulatszám mérővel, 0.1\%-nál kisebb a hiba\\
+	
+	/subsubsection{Beszerzés}
+	Hall effektus szenzorok:\\
+	\url{https://www.hestore.hu/prod_10046558.html?gross_price_view=1&source=gads&gad_source=4&gclid=Cj0KCQjwu-63BhC9ARIsAMMTLXTysUET4EXTrQLyqne3o1W2kcbNJwAVGTUr91tBmcZ_yQ7W2zJWPjcaAj_KEALw_wcB}\\
+	\url{https://techfun.hu/termek/linearis-hall-effektus-erzekelo-s49e/?gad_source=4&gclid=Cj0KCQjwu-63BhC9ARIsAMMTLXT6GEn4jMS-WflhXlcKkPb9wuaYUdYvAlxEvwqUre9479dMZjW8DaAaAiAaEALw_wcB}\\
+	\url{https://www.inshop.hu/tru-components-1569218?srsltid=AfmBOoqYlpRZXrP3sL9BCTp1OI2VIADUQsgn4aiPOdegCys8GbJFSevx0_0}\\
+	Induktív szenzorok:\\
+	\url{https://www.hestore.hu/prod_10043945.html?gross_price_view=1&source=gads&gad_source=4&gclid=Cj0KCQjwu-63BhC9ARIsAMMTLXRtJRWoo-kgcpaHu7YucS8qUlR4XQCyHfTpr8JNO8rY4CxNt_esMiUaArOLEALw_wcB}\\
+	\url{https://techfun.hu/termek/induktiv-helyzeterzekelo-lj12a3-4-zbx/?gad_source=4&gclid=Cj0KCQjwu-63BhC9ARIsAMMTLXTjKCXy8ey5JxOlm_3tlFCxr87RpaxdAn8HdWG-2GdTAvYqZltIAMcaAm4bEALw_wcB}
+	
+	
+	12V a rendszer
+	szenzor választás - komplett házas - szennyeződés
+	dugalyos cserélhető verzió - kábel megválasztása
+	84391778 H4CQF
+	
+	3 szenzor mindenképp
+	fogastárcsa a felszedőhöz (85-150 rpm)
+	túloldal a csiga tengelyen (220-270 rpm) - lemez kell
+	nyomatékhatároló külső fogastárcsa
+	
+	fogas lemez - 1 füles vagy sok füles melyik pontosabb
+	
+	2 féle nyomatékhatároló - egyikre megoldás
+	
+	
+	
+	
+\end{document}
