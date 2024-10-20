@@ -15,6 +15,15 @@
 \begin{document}
 	\maketitle
 	
+	\section{alternatívák}
+	
+	2 féle nyomatékhatároló
+	
+	visszajelzés alternatívái:
+	1 égő
+	wifi / bluetooth interface - képernyő a silozóban
+	csatlakozón beküldeni a silózóba - különböző szabványokra portolni
+	
 	\section{Feladatkiírás}
 	
 	\begin{enumerate}
@@ -40,12 +49,12 @@
 	\subsection{később fontos lehet}
 	\begin{itemize}
 		\item milyen eszközzel digitalizáljuk majd a szenzorok jeleit? (PLC, mikrovezérlő, ipari PC stb)
-		\item milyen módon továbbítsuk ezeket a mért adatokat? (buszok, protokollok, pl. soros port, CAN busz stb.)
+		\item milyen módon továbbítsuk ezeket a mért adatokat? (buszok, protokollok, pl. soros port, CAN busz stb.) --Wireless valami
 	\end{itemize}
 	
 	\subsection{Paraméterek}
 	\begin{itemize}
-		\item Feszültség
+		\item Feszültség: 12 V
 		\item Fogaskerekek anyaga
 		\item Fordulatszám intervallum
 		
@@ -147,7 +156,41 @@
 	
 	2 féle nyomatékhatároló - egyikre megoldás
 	
+	Lánckerekek max radiális ütése 0,3-0,4 mm, ez lehetővé teszi, hogy közel állítsuk az érzékelőt. Viszont a lánckerék zsíros poros.
 	
+	Lemezből készült alkatrész (fogazott tárcsa) esetén gyártási pontosság +0,5-0,5mm + szerelési illesztésekből adódóan +0,5-0,5.
+	
+	Mindkét esetben 3-4mm távolság beállítást javasolnék. 
+	
+	
+	\section{Controllers}
+	
+	\url{https://vtechworks.lib.vt.edu/server/api/core/bitstreams/ea7b726b-2e68-48d4-b1c6-92ccfaf58a05/content}\\
+	Mikrokontroller\\
+	\url{https://doi.org/10.1016/B978-0-12-800884-3.00010-1}\\
+	Mikrokontroller
+	
+	
+	visszacsatolás változtatásához előnyös a mikrokontroller - könnyen módosítható kimenet (wifi, elektronikus jel ...)
+	
+	Smart sensors jobs:
+	\begin{itemize}
+		\item Remote calibration capability.
+		\item Self-diagnosis of faults.
+		\item Automatic calculation of measurement accuracy and compensation for random errors.
+		\item Adjustment for measurement nonlinearities to produce a linear output.
+		\item Compensation for the loading effect of the measuring process on the measured system
+		\item 
+	\end{itemize}
+	
+	
+	
+	
+	
+	
+	\section{Adatfeldolgozás}
+	
+	amplifier
 	
 	
 \end{document}
