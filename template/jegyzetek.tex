@@ -35,6 +35,15 @@
 		\item Foglalja össze a kapott eredményeket magyar és angol nyelven.
 	\end{enumerate}
 	
+	\section{Célok és Elvek}
+	
+	\begin{itemize}
+		\item por és olaj álló
+		\item moduláris, cserélhető (right to repair)
+		\item minél kevesebb támogató tervezés kelljen hozzá (lánckerék mérés)
+		\item 
+	\end{itemize}
+	
 	\section{Kutatómunka}
 	\subsection{kiindulás}
 	\begin{itemize}
@@ -134,7 +143,107 @@
 	\\
 	kalibráció: stroboszkópos fordulatszám mérővel, 0.1\%-nál kisebb a hiba\\
 	
-	\section{Beszerzés}
+	\section{Controllers}
+	
+	programmable automation controller scalability, larger memory, more flexibility in programming
+	industrial pc overkill and big, a pc that is specialized in automation
+		
+	\subsection{PLC}
+	
+	A PLC egy rendszer, amely egy mikrokontroller köré lett építve, robosztus, nagy terhelhetőségű rendszerek irányítására és streamlineolására lett kitalálva
+	Arduino based plc
+	
+	\begin{itemize}
+		\item 12 V
+		\item moduláris, nem kell forrasztani a cseréhez
+		\item robosztus, megbízható
+		\item egyszerűbb programozás
+		\item szennyeződésállóbb
+	\end{itemize}
+	
+	részei:
+	\begin{itemize}
+		\item keret
+		\item tápegység
+		\item programozó felület: külsőleg rácsatlakoztatott (laptop)
+		\item I/O szakasz
+		\item CPU
+	\end{itemize}
+	
+	általában gyártó által felprogramozott, program keretei meg vannak adva, ladder diagram
+	
+	szabályozási módszerek: (igazából én irányítást csinálok)
+	\begin{itemize}
+		\item két lépéses: on / off
+		\item P
+		\item I
+		\item D
+		\item PID/PI/PD
+	\end{itemize}	
+	
+	
+	ipari automatizáció szoftveressé tételével jöttek létre
+	
+	\subsection{Mikrokontroller}
+	
+	számítógépek kicsinyítésével, alaplap kompakt megoldásával jöttek létre
+	
+	\begin{itemize}
+		\item 3.33 V - 5 V
+		\item könnyű továbbfejleszthetőség, újraprogramozás, bővítés (Wi-Fi, stb)
+		\item kompaktabb, alacsony feszültség, specifikus dolgokat beépíthetünk
+		\item olcsóbb
+		\item nem egy ipari környezetben használjuk, nem kell nagy rendszer, sok output, más számitogepek
+		\item visszacsatolás változtatásához előnyös a mikrokontroller - könnyen módosítható kimenet (wifi, elektronikus jel ...)
+	\end{itemize}
+	
+	
+	
+	Smart sensors:
+	\begin{itemize}
+		\item Remote calibration capability.
+		\item Self-diagnosis of faults.
+		\item Automatic calculation of measurement accuracy and compensation for random errors.
+		\item Adjustment for measurement nonlinearities to produce a linear output.
+		\item Compensation for the loading effect of the measuring process on the measured system
+	\end{itemize}
+	
+	
+	\section{jelfeldolgozás}
+	
+	\subsection{Analóg jelfeldolgozás}
+	\begin{enumerate}
+		\item amplification: amplify weak sensor signals
+		\item filtering: filter inherent noise
+		\item anti-aliasing: eliminate high-freq components - above the Nyquest rate (1/2 sampling rate)
+	\end{enumerate}
+	%	
+	aliasing: sampling rate must be at least double the frequency of the signal\\
+	ha 300 rpm-el számolunk, az 5 Hz, ha van x fogaskerekünk akkor a jel frekvenciája 5 * x = 150 Hz < 500 / 2 Hz
+
+	nemhiszem hogy szükséges valós idejű szűrőket alkalmazni, szükség esetén térjünk vissza rá
+	
+	\section{Adat továbbítás}
+	
+	I/O, HART (bus-based)
+	Paralell Data Bus
+	LAN - fast, long range - Overkill
+	Digital fieldbus - fast, 2 way communication, LAN
+	
+	!!szenzor hiba jelzés
+	
+	\section{Visszajelzés}
+	
+	\subsection{Lámpa}
+	
+	video: \url{https://www.youtube.com/watch?v=Js3flI-84D8}
+
+	1700 Ft: \url{https://www.conrad.hu/hu/p/led-es-jelzolampa-22mm-piros-12v-ac-dc-152484.html}
+	12V
+	22 mm átmérő
+	
+	
+	\section{Meetingek}
 	
 	\subsection{meeting 10.8.}
 	
@@ -144,13 +253,28 @@
 	84391778 H4CQF
 	
 	M12-es: \url{https://www.electricstore.hu/autonics/prdcm12-4dp-induktiv-erzekelo-12-24vdc-m12-4mm-pnp-no?gad_source=1&gclid=CjwKCAjw3624BhBAEiwAkxgTOkLaKXLI6GQJ9YZEVY_-tAHNSpkxoH8HQei1cQJeC9ptuPmOc45EvBoCwnoQAvD_BwE}
-	M30-as: \url{https://www.ipari-elektronika.com/sick-induktiv-erzekelo-ime30-10bpszc0s-1040998?utm_source=google_shopping&utm_medium=cpp&utm_campaign=direct_link&utm_term=&utm_campaign=&utm_source=adwords&utm_medium=ppc&hsa_acc=7898010743&hsa_cam=20569131558&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAjw3624BhBAEiwAkxgTOmBXvgHD_t8CGmibL7POGAecy22Od8zOcuYa143QJrFU7jOKfMmOjRoCRAoQAvD_BwE}
+	
+	8 mm: \url{https://anxq.hu/induktiv-erzekelo-is-12-h1-s2-m12-rovid-verz-dupla-erzekelesi-tav-nem-sully-8mm-pnp-no-3-vezetekes-m12-csatlakozo?utm_source=google_shopping&utm_medium=cpp&utm_campaign=direct_link&gad_source=1&gclid=CjwKCAjwjsi4BhB5EiwAFAL0YEh2GQs8CRxC_SfYj5ndum1nb41hw7qUbFdcOHYmSHGV6851MbRNgxoCYHsQAvD_BwE}
+	Conrad
+	\url{https://www.conrad.hu/hu/p/datalogic-induktiv-kozelites-kapcsolo-m12-sikba-nem-epitheto-pnp-is-12-h1-s2-1488394.html}
+	
+	10..30 Vdc
+	PNP NO
+	3 wires
+	kapcsolási távolság: 8 mm
+	500 Hz
+	
+	A szenzoroknál a mérési frekvencia 500 Hz, illetve azt is írták a katalógusban hogy 500 Hz / 200 hz (4 wires NO-NC), amiről azt gondolom, hogy ha 4 kábel van bekötve akkor az aktív 0 bekötés és aktív 1 bekötést is méri, így lesz 200 Hz. Ebben annyira nem vagyok biztos, ha csatolom a katalógust, esetleg rá tudsz nézni? (IS-12-H1-S2 a szenzor kódja)
+	De ha 500 Hz-el számolunk, akkor a mérendő jelünk 250 Hz alatt kell legyen, ehhez a gondolatmenetemet le tudnád ellenőrizni:
+	Nyomatékhatárolón: 350 rpm a legnagyobb fordulatszám, ez másodpercenként 5.83 1/s , amit a fogszámmal megszorozva kapjuk a jelünk frekvenciáját (hány fog megy el a szenzor előtt másodpercenként): 5.83 * 32 = 186.56 Hz, ami megfelelő.
+	A túloldali lemeznél: 270 rpm --> 4.5 1/s, ami után a lemez 1 fogának a vastagságától függ, de mondjuk, ha 1/20-a a teljes körnek, az olyan mintha 10 fog és 10 fogárok lenne, ezzel 45 Hz jönne ki.
+	Végül a felszedőnél: 150 rpm --> 2.5 1/s, 38 fog. Így 38 * 2.5 = 95 Hz, szintén megfelelő.	
 	
 	
 	3 szenzor mindenképp
-	fogastárcsa a felszedőhöz (85-150 rpm)
+	fogastárcsa a felszedőhöz (85-150 rpm) - (z=38 fog)
 	túloldal a csiga tengelyen (220-270 rpm) - lemez kell
-	nyomatékhatároló külső fogastárcsa
+	nyomatékhatároló külső fogastárcsa (180-350) (z=32 fog)
 	
 	fogas lemez - 1 füles vagy sok füles melyik pontosabb
 	
@@ -162,35 +286,38 @@
 	
 	Mindkét esetben 3-4mm távolság beállítást javasolnék. 
 	
+	\subsection{kerdesek 10.30}
 	
-	\section{Controllers}
+	PLC: 12V
+	natív feszültség a rendszeren, a szenzorokon, így a lámpán is
+	Moduláris!!
+	Arduino - személyre szabhatóbb
+	Wi-Fi, Bluetooth ha kell
 	
-	\url{https://vtechworks.lib.vt.edu/server/api/core/bitstreams/ea7b726b-2e68-48d4-b1c6-92ccfaf58a05/content}\\
-	Mikrokontroller\\
-	\url{https://doi.org/10.1016/B978-0-12-800884-3.00010-1}\\
-	Mikrokontroller
+	Lámpa:
+	3 centi átmérő, dobozra szerelhető !!!
+	\url{https://www.conrad.hu/hu/p/led-es-jelzolampa-22mm-piros-12v-ac-dc-152484.html}
+	\url{https://www.vilagitascenter.hu/tracon_ipari_led_jelzolampa_22mm_12v_piros_ljl22-ra}
+	tipikus jelzőlámpa, mentőautó 
+	\url{https://hu.elmarkstore.eu/jelző-lámpa-lte1101-r-12v-piros-product24244}
+	jelzőoszlop \url{https://www.conrad.hu/hu/p/tru-components-jelzo-oszlop-tc-9539288-led-piros-1-db-2384822.html?utm_source=google&utm_medium=cpc&utm_campaign=HU%20-%20PMAX%20-%20NonBrand%20-%20High&utm_id=21749768371&gad_source=1&gclid=Cj0KCQjwsoe5BhDiARIsAOXVoUt2AqBo6jgopCy2DVZL8qmG_l8jI4LAl2jT7j-jxk-buoL3l2nSL4UaAuW7EALw_wcB}
 	
+	Conradrol rendelni mindent: egyben jön, szállítási költség	
 	
-	visszacsatolás változtatásához előnyös a mikrokontroller - könnyen módosítható kimenet (wifi, elektronikus jel ...)
+	\subsection{meeting 10.31}
 	
-	Smart sensors jobs:
-	\begin{itemize}
-		\item Remote calibration capability.
-		\item Self-diagnosis of faults.
-		\item Automatic calculation of measurement accuracy and compensation for random errors.
-		\item Adjustment for measurement nonlinearities to produce a linear output.
-		\item Compensation for the loading effect of the measuring process on the measured system
-		\item 
-	\end{itemize}
+	350-400 euro a nyomatékhatároló
+	költség - biztonság
 	
+	kis lámpa 3 cm átmérős 
 	
+	vízmentes csatlakozó változást
+	plc-be vagy kábelkorbács
 	
+	próbáljuk wi-fi bluetooth, ha drágább is
 	
+	forgalmazó egyeztet a gépgyártókkal, hátha a silozokra rá lehet
 	
-	
-	\section{Adatfeldolgozás}
-	
-	amplifier
-	
+	ip védett
 	
 \end{document}
