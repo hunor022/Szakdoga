@@ -15,6 +15,15 @@
 \begin{document}
 	\maketitle
 	
+	Forrásolás
+	\begin{itemize}
+		\item silozo
+		\item szálastakarmány
+		\item right to repair
+		\item 
+	\end{itemize}
+	
+	
 	\section{alternatívák}
 	
 	2 féle nyomatékhatároló
@@ -41,7 +50,7 @@
 		\item por és olaj álló
 		\item moduláris, cserélhető (right to repair)
 		\item minél kevesebb támogató tervezés kelljen hozzá (lánckerék mérés)
-		\item 
+		\item biztonságos
 	\end{itemize}
 	
 	\section{Kutatómunka}
@@ -99,11 +108,6 @@
 		\item Transverse Inductive Sensor - kis elmozdulás mérése (overkill)
 		\item Hall effektus szenzorok - egy bizonyos távolságon (release point) belül lévő mágneseket érzékelnek
 		\item Magnetoresistive sensors - mágneses forrás szükséges, nem mindegy milyen tengelyei hatnak a szenzorra, nagy pontosságú párhuzamosság kell hozzá (nem valószínű hogy jó ide)
-		\begin{figure}[h]
-			\caption{fogaskerék mérő elrendezés}
-			\centering
-			\includegraphics[width=0.7\textwidth]{magnetoresistive_toothed_wheel}
-		\end{figure}
 		\item Magnetostrictive detector - cső és gyűrűmágnes kell hozzá (nem jó)
 	\end{itemize}
 	Optikai szenzorok - olaj és porszennyezés miatt nem is jön szóba
@@ -127,11 +131,6 @@
 			\item fogaskeréken a távolodó és közeledő fogak megváltoztatják a mágneses fluxust amit mér a szenzor
 			\item van egy fordulatszám limit (?? - jóval kevesebb mint 10 000 rpm)
 		\end{itemize}
-		\begin{figure}[h]
-			\caption{fogaskerék mérő elrendezés}
-			\centering
-			\includegraphics[width=0.7\textwidth]{images/variable reluctance sensor.png}
-		\end{figure}
 		\item Hall effektus szenzor:  fogaskerekeknél a szenzor mögött egy állandó mágneses tér nagyobb amikor a fogak közötti hely van a szenzor előtt, kisebb a fogak eltérítik a mágneses tér egy részét, a szenzor ez alapján ad le különböző feszültségeket
 	\end{itemize}
 	Stroboszkópos szenzorok - fény alapúak, nem alkalmasak \\
@@ -223,10 +222,11 @@
 				\item 71.5x90x58
 				\item 69k
 			\end{itemize}
-		\item Siemens LOGO!
+		\item Siemens LOGO! - szerintem ez a move
 			\url{https://mall.industry.siemens.com/mall/en/WW/Catalog/Product/6ED1052-2MD08-0BA2}
 			\url{https://aonline.hu/Siemens-LOGO-Basic-kijelzo-nelkul-alapegyseg-12-24?gad_source=1&gclid=Cj0KCQiArby5BhCDARIsAIJvjIQEKl6HOI_aqbwnbf9ugS9PrEpXgStMSAT6mDYTOXKnVZPxBwGrYkUaAuloEALw_wcB}
 			\begin{itemize}
+				\item Internet, cloud
 				\item 12 V
 				\item 4 DI + 4 DI/AI
 				\item 4 DO
@@ -235,8 +235,8 @@
 				\item 71.5x90x58
 				\item 58k
 			\end{itemize}
-		
 	\end{itemize}
+	
 	
 	\subsection{Mikrokontroller}
 	
@@ -384,10 +384,10 @@
 	A céges szakdolgozatom során egy mezőgazdasági felszedő adapternél több helyen is a fordulatszám mérését, majd ezeknek a fordulatszámoknak az összehasonlítását valósítom meg. A PLC rendszerre két okból esett a választás. A környezeti tényezők (por, olaj) tűrése miatt egy induktív szenzort választottam, amely PLC rendszerekhez van tervezve, illetve az adapteren a feszültség forrás 12V-os.
 	A kérdésem az lenne, hogy milyen katalógust ajánl, vagy hol lehet termékeket keresni, ha egy költséghatékony megoldást, kisebb PLC rendszert szeretnék megvalósítani, amely 3 bemenettel és 1 kimenettel (jelzőfény) rendelkezik. 
 	A rendszernek lánckerekek fogait mérő szenzorokból kapott jeleket kell feldolgoznia és fordulatszámmá konvertálja, majd a jelzőfényt felkapcsolnia ha ezek eltérnek. Ehhez megfelelő számítási kapacitás lenne szükséges, azonban azt nem tudom számszerűen megítélni mennyi lehet.
+
+
+	Válasz:
 	
-	Ha több információra van szüksége nyugodtan keressen.
-	
-	Köszönettel:
-	Kovács Hunor
+	PLCk 24 Voltosak, nézz rá a SmartRelay-kre
 	
 \end{document}

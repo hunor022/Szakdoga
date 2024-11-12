@@ -2,20 +2,34 @@
 \chapter{\bevezetes}
 %----------------------------------------------------------------------------
 
+A mezőgazdasági fejlesztés hangsúlyosabb mint valaha, hiszen a világ népessége növekedését a meglévő földterületeinken kell ellássuk. A mezőgazdasági gépek biztonságát igyekszik elősegíteni jelen szakdolgozat, az egyes alkatrészek meghibásodásának megelőzésével, a veszélyes helyzetek jelzésével. 
+
 %----------------------------------------------------------------------------
 \section{Feladat bemutatása}
 %----------------------------------------------------------------------------
 
-%----------------------------------------------------------------------------
-\section{Korábbi megoldások}
-%----------------------------------------------------------------------------
+A szakdolgozatom a szálastakarmány felszedő adapter szenzortechnikai fejlesztése címet kapta. A szálastakarmány felszedő adapter a mezőgazdaságban alkalmazott szerkezet, amely a silózoknak hajtja végre a szálastakarmány összegyűjtését. A silózók olyan mezőgazdasági gépek, amelyek a szálastakarmány (pl.: lucerna, széna) begyűjtését, összevágását és rövidre darabolását ("szecskázását") végzik, mely állat tápként lesz felhasználva. Az adapter a silózóhoz van csatlakoztatva, ezáltal a működtetést a silózó végzi. Innen érkezik az irányító jel, az elektromos feszültség, a hidraulikus energia és a forgatónyomaték. Az felszedőn több tengely is található, a legfontosabb a felszedő, melyen fogakkal történik a szálastakarmány gyűjtése, felette egy csiga helyezkedik el, mely az adapter szélességében tereli a takarmányt a középtengely felé, ahol is a begyüjtés történik. A csigánál található tengelyen helyezkedik el egy nyomatékhatároló. A nyomatékhatároló feladata, hogy a túlzott terheléstől megvédje a felszedő adaptert, így ha túl nagy nyomaték érkezik a silózó felől, a nyomatékhatároló szétkapcsol és a felszedő roncsolódása elkerülhető. A nyomatékhatároló szétkapcsolások a benne található tárcsák tapadási súrlódása megszűnik, így elkezdenek csúszni egymáson, amely a tárcsák felületének súrládásához, hosszabb idő alatt roncsolódásához vezet. A nyomatékhatárolók védelme érdekében van szükség egy visszajelző rendszerre, amely a nagy terhelés esetén jelzi az irányítóknak, hogy a nyomatékhatároló megcsúszott.
+Az én feladatom ezt a rendszert megtervezni, amely a tengelyek fordulatszámának figyelésével érzékelni tudja ha azok eltérnek a beérkező fordulatszámtól, majd a különbség fennmaradásával egy visszajelzést adjon a silózóban tartózkodó irányítónak. A visszajelzés történhet fény, hang vagy mindkettő formájában, a jelzőegységek lehetnek az adapter látható felületein, vagy akár az irányító fülkében is.
 
 %----------------------------------------------------------------------------
 \section{Célkitűzések}
 %----------------------------------------------------------------------------
 
+A dolgozat célja, hogy bemutassa egy mezőgazdasági környezetben való rendszer kialakításának megfontolásait, valamint a tervezési folyamat megvalósítását. Ezen felül az elvárásoknak megfelelő rendszerre való javaslatot tegyen, amely egy termékként alkalmazhatóvá váljék a gyakorlatban is.
+A feladat során több olyan irányadó cél, elv mentén történt a tervezés, amely vagy felhasználói, környezeti igényeket elégít ki, vagy a fenntarthatóság, az életciklus növelését segíti.
+\begin{enumerate}[I.]
+	\item Környezettel, szennyeződésekkel való ellenálló képesség. A felszedő adapteren a két fő szennyező a por és az olaj, így olyan rendszert kell kialakítani, amely vagy szigetelve van kellő mértékben, vagy a szennyeződések nem károsítják a működését. Ez megköveteli az eszközök burkolatban, házban történő tárolását, a csatlakozók kellő szigetelését, illetve por- és olajmentes, vízálló eszközök használatát.
+	\item Modularitás, cserélhetőség. A jelen kori gazdák egyik panasza a mezőgazdasági gépgyártók felé, a szerelhetőség jogának ("Right to repair") figyelmen kívül hagyása. Ez a gépek szétszedhetőségét, a felhasználó általi javítási lehetőségének csökkenését jelenti, ezáltal a gyártó szakszervizeiben való költséges, idő- és szállításigényes javításra kötelezi a gazdákat. A cél egy olyan rendszer kialakítása, amelynek minden alkatrésze cserélhető és hozzáférhető, így bármelyik elem meghibásodása során csak az szorul cserére. Ez a szenzorok csatlakozós, nem kábellel egybeépített változatában, a moduláris, egyszerűen szétköthető szabályozó eszközben, valamint, a vízálló csatlakozók szétszedhetőségében nyilvánul meg.
+	\item Támogató tervezés csökkentése. A projekt tekintetében egyszerűségre, a mechanikai tervezés csökkentésére törekvés jellemző, a mechatronikai, rendszer tervezésének előnyben részesítése, valamint a felszedő adapter bonyolításának elkerülése végett. Ez az eszközök a meglévő geometriába való integrálásában, az adapter alkatrészeinek direkt mérésében, és a külön szigetelési és burkolási feladatok csökkentésében látható.
+	\item Biztonság. A biztonságosság mind a rendszer kitartó működésére, mind a környezetének, üzemeltetőinek megóvására vonatkozik. A projekt során az elektromos berendezések szigetelésére és elzárására, valamint az eszközök külső hatásoktól védésére is hangsúly lett fektetve.
+\end{enumerate}
+
 %----------------------------------------------------------------------------
 \section{Áttekintés}
 %----------------------------------------------------------------------------
 
-\subsection{Elvek és módszerek}
+A rendszernek 4 alapvető része van: érzékelés (szenzorok), szabályozás, visszajelzés és kommunikáció.
+Az érzékelés esetében bemutatásra kerül a különböző fordulatszám mérő mechanizmusok közötti különbség, az egyes mechanizmusok előnyei és hátrányai, valamint ezek alapján a célnak megfelelőek is kiderülnek. A szenzorok megvalósítása is tárgyalva lesz, a különböző rendszerekben alkalmazott szenzor kivitelezések, szabványok és megoldások. Ezen felül a szenzorok elhelyezkedése, kábelezése, a felszedő adapterre való alkalmazásuk is ábrázolva lesz.
+A szabályozás során az ipari eszközök lesznek bemutatva, amelyek a szenzorok adatait fel tudják dolgozni, valamint programkódokat, irányítási feladatokat kivitelezni tudnak. Lesz szó a különböző megoldások alkalmazásainak lehetőségéről, egymáshoz képesti összehasonlításuk is megtörténik, az egyes szabályozó eszközökkel járó rendszerbeli változtatás, valamint a rendszer igényei szerinti szabályozó eszköz változása is feltérképezésre kerül. Végül a szabályozás eszközeinek elhelyezése, biztonságtechnikai megfontolásai és időállóságának kialakítása is fényre derül.
+A visszajelzés a rendszer mindennapokban érzékelhető része, ugyanis ez az emberrel való kommunikációjának a platformja. A jelzésnek több módszere áll rendelkezésre, melyek között a rendszer adottságai valamint a felhasználó igényei választanak. Az egyszerű fényjelzések, hangjelzésektől egészen a kijelzőkön megjelenő részletes információkig bemutatásra kerül, melyiknek milyen igényei vannak, illetve melyik praktikus jelen felhasználásunkban.
+A kommunikáció fogja össze a projektet, biztosítja az egyes részek közötti információáramlást. A kommunikációs protokollok, metódusok meghatározzák a rendszer többi részének minden elemét, a szenzorok feldolgozásának sebességétől, a szabályozó elem kiválasztásán át, a visszajelzés platformjáig. A rendszerünk egészének tervezése során bemutatásra kerül a kommunikáció módszereinek hangsúlya, lehetőségei, valamint a környezeti hatásokkal szemben való védelem kritikus szerepe is.
