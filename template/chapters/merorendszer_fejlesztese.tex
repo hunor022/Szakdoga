@@ -54,6 +54,32 @@
 \subsection{Adatok összehasonlítása}
 %----------------------------------------------------------------------------
 
+A \ref{table:progrele} táblázat tartalmazza a programozható relék közül a megfelelő feszültséggel operálókat.
+
+\begin{table}[]
+	\renewcommand{\arraystretch}{1.4}
+	\scalebox{0.73}{
+		\begin{tabular}{|l||l|l|l|l|}
+			\hline
+			& \begin{tabular}[c]{@{}l@{}}Schneider Electric\\ Zelio Logic\end{tabular} & IDEC SmartRelay    & Siemens LOGO! 							 & Eaton Easy  \\ \hhline{|=||=|=|=|=|}
+			Modellszám           & SR2B121JD                                                                & FL1F-B12RCE                                                 & 6ED1052-2MD08-0BA2                                                     & EASY-E4-UC-12RCX1                                                                     \\ \hline
+			Feszültség           & 12V                                                                      & 12/24V                                                      & 12/24V                                                                 & 12/24V                                                                                \\ \hline
+			Bemenetek            & 4 DI + 4 AI                                                              & 4 DI + 2 AI                                                 & 4 DI + 4 DI/AI                                                         & 4 DI + 4 DI/AI                                                                        \\ \hline
+			Kimenetek            & 4 DO                                                                     & 8 DO                                                        & 4 DO                                                                   & 4 DO                                                                                  \\ \hline
+			Számítási frekvencia & 1 kHz                                                                    & 5 kHZ                                                       & 5 kHz                                                                  & 5 kHz                                                                                 \\ \hline
+			Kommunikáció         & N/A                                                                      & N/A                                                         & Modbus TCP                                                             & MODBUS TCP/IP                                                                         \\ \hline
+			Program felület      & \begin{tabular}[c]{@{}l@{}}ZelioSoft 2\\ (LD, FBD)\end{tabular}          & \begin{tabular}[c]{@{}l@{}}WingLGC\\ (LD, FBD)\end{tabular} & \begin{tabular}[c]{@{}l@{}}LOGO! Soft Comfort\\ (LD, FBD)\end{tabular} & \begin{tabular}[c]{@{}l@{}}EASYSOFT-SWLIC/easySoft7\\ (EDP, LD, FBD, ST)\end{tabular} \\ \hline
+			Internet csatlakozó  & Nincs                                                                    & Ethernet RJ45                                               & Ethernet RJ45                                                          & Ethernet RJ45                                                                         \\ \hline
+			SD memory            & Nincs                                                                    & MicroSD                                                     & MicroSD                                                                & Nincs                                                                                 \\ \hline
+			Méret                & 90x68x10                                                                 & 90x71.5x58                                                  & 90x71.5x58                                                             & 90x72x58                                                                              \\ \hline
+			Költség              & 75 000                                                                   & 69 000                                                      & 58 000                                                                 & 72 000                                                                                \\ \hline
+		\end{tabular}
+	}
+	\caption{Programozható relék összehasonlítása}
+	\label{table:progrele}
+	\renewcommand{\arraystretch}{1}
+\end{table}
+
 %----------------------------------------------------------------------------
 \subsection{Hibatűrő rendszer kialakítása}
 %----------------------------------------------------------------------------
