@@ -4,43 +4,51 @@
 %----------------------------------------------------------------------------
 
 
+A felszedő adapteren alkalmazott elektromos készülékekhez $12$ V tápfeszültség van alkalmazva, így az egyik fő követelménye a fejlesztendő rendszernek, hogy ezen a feszültségen működjön. A korábban már említett por- és olajszennyezés, valamint a kompaktság és modularitás is fontos, hogy szem előtt maradjon. A rendszer kialakításában nagy szerepet játszik még a biztonságtechnikai megfontolás, valamint a meglévő kialakításra való ráillesztés, a támogató mérnöki munka lecsökkentése.
+
 %----------------------------------------------------------------------------
 \section{Szenzorok}
 %----------------------------------------------------------------------------
 
+A feladat során három szenzor alkalmazása szükséges, melyek mind fordulatszámot mérnek, azonban különböző céllal és kialakításban. Az első cél a nyomatékhatároló két végén való összehasonlítás, amelyhez két fordulatszámmérő szenzor alkalmazása szükséges. Ezen felül a fogakkal ellátott felszedő tengely fordulatszámának mérése is a feladat része, ez azonban a visszajelzésben tájékoztató jellegű, biztonságtechnikai feladata nincs.
+
 %----------------------------------------------------------------------------
-\subsection{Mérendő mennyiségek}
+\subsection{Szenzorválasztás}
 %----------------------------------------------------------------------------
 
+Ezek alapján a szenzornak a következő kritériumoknak kell megfelelnie:
+
+\textbf{Por- és olajállóság}: a szenzor élettartamát nem befolyásolhatják ezek a szennyező anyagok, valamint szennyezett környezetben a mérés pontosságát meg kell tartania. Az első kritériumnak a legtöbb ipari kialakítású szenzor megfelel, hiszen megfelelő ház, burkolat védi őket a külvilágtól. A második kritérium
+
+
+\subsubsection{Mérési elvek}
+miért nem azokat választottam
+
+\subsubsection{Szenzor paraméterei}
+követelmények a technológiával
+mérési frekvencia
+mérési távolság
+%----------------------------------------------------------------------------
+\subsubsection{Kialakítás}
+%----------------------------------------------------------------------------
+burkolat
+dugalyos
 %----------------------------------------------------------------------------
 \subsection{Elhelyezés}
 %----------------------------------------------------------------------------
+A \ref{szenzorok} ábrán látható a tengely két oldalán való szenzor kialakítása. Ezek a szenzorok a takarmány összeterelésére alkalmazott csiga két oldalán helyezkednek el, mivel a nyomatékhatároló felőli oldalon nem állt rendelkezésre felület még egy szenzor felhelyezésére, így a csiga tengelyének a túloldalára erősített lemezen keresztül lesz alkalmunk azt mérni.
 
-%----------------------------------------------------------------------------
-\subsection{Szennyeződések}
-%----------------------------------------------------------------------------
+kábelezés
+3 erezet
+tápfeszültség
 
-%----------------------------------------------------------------------------
-\subsection{Szervizelhetőség}
-%----------------------------------------------------------------------------
-
-%----------------------------------------------------------------------------
-\subsection{Kábelezés}
-%----------------------------------------------------------------------------
-
-
+lemezek/tárcsák
 %----------------------------------------------------------------------------
 \section{Jelek}
 %----------------------------------------------------------------------------
-
-%----------------------------------------------------------------------------
-\subsection{Szenzorokból származó jelek}
-%----------------------------------------------------------------------------
-
-%----------------------------------------------------------------------------
-\subsection{Jelekből adat}
-%----------------------------------------------------------------------------
-
+feszültség
+olvasás
+feldolgozás
 
 %----------------------------------------------------------------------------
 \section{Szabályozás}
@@ -50,6 +58,9 @@
 \subsection{Szabályozás eszközei}
 %----------------------------------------------------------------------------
 
+\subsubsection{Eszközválasztás}
+
+feszültségkonverzió --> limitált eszközök
 A \ref{table:progrele} táblázat tartalmazza a programozható relék közül a megfelelő feszültséggel operálókat.
 
 \begin{table}[]
@@ -76,30 +87,42 @@ A \ref{table:progrele} táblázat tartalmazza a programozható relék közül a 
 	\renewcommand{\arraystretch}{1}
 \end{table}
 
-%----------------------------------------------------------------------------
-\subsection{Adatok összehasonlítása}
-%----------------------------------------------------------------------------
 
+%----------------------------------------------------------------------------
+\subsection{Programozás}
+%----------------------------------------------------------------------------
+milyen módszerrel
+ki tudja felprogramozni
+kapcsolódás
+%----------------------------------------------------------------------------
+\subsection{Adatfeldolgozás}
+%----------------------------------------------------------------------------
+analóg feszültségjelek
+fordulatszám kialakító függvények
+kiadott jelek - hiba felismerése
 %----------------------------------------------------------------------------
 \subsection{Hibatűrő rendszer kialakítása}
 %----------------------------------------------------------------------------
-
+várakozás a megcsúszással
 %----------------------------------------------------------------------------
 \subsection{Szennyeződés kizárása}
 %----------------------------------------------------------------------------
-
+doboz, ip védettség
+tömszelence
 %----------------------------------------------------------------------------
 \section{Visszajelzés}
 %----------------------------------------------------------------------------
-
+mikor kell jelezni, mit érzékelnek
 %----------------------------------------------------------------------------
 \subsection{Visszajelzés eszközei}
 %----------------------------------------------------------------------------
-
-%----------------------------------------------------------------------------
-\subsection{Human-Machine interface}
-%----------------------------------------------------------------------------
-
+hang haszontalan
+fény láthatóság
 %----------------------------------------------------------------------------
 \subsection{Kommunikáció}
 %----------------------------------------------------------------------------
+digitális kimenet
+
+\subsubsection{Opcionális hálózati csatlakozás}
+
+\subsubsection{Gyártói szabványos kommunikáció}
