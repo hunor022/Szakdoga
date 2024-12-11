@@ -2,15 +2,13 @@
 \chapter*{\summary}\addcontentsline{toc}{chapter}{\summary}
 %----------------------------------------------------------------------------
 
-\selectforeignlanguage % angol (magyar) nyelvi beállítások
+\selectforeignlanguage % angol nyelvi beállítások
 
-%Az elvégzett munka rövid, másfél oldalt meg nem haladó, de legalább 2/3 
-%oldalnyi terjedelmű angol nyelvű összefoglalása.
-%
-%Angol nyelven készített dolgozat esetén magyar nyelvű összefoglaló kell, ha a
-%készítő magyar anyanyelvű. Nem angol vagy nem magyar nyelven készített
-%dolgozat esetén kötelező az angol nyelvű összefoglaló, és ha a készítő magyar
-%anyanyelvű, akkor a magyar nyelvű is.
+In this thesis, I describe the development of a feedback and measuring system for an agricultural machine's collection header. The system's responsibility is to alert the driver in case the torque limiter is engaged. The torque limiter protects the drive systems of the header by allowing the internat discs to slip causing wearing to them, and possibly damage the torque limiter. The system also communicates wirelessly with a cloud, sending the rotational speeds of three shafts. The two main axes are located before and after the torque limiter, while the third is the collection shaft.
+
+The main part of this paper is the selection of the appropriate sensors and control system parts for the environment. While the machine is operating, the gearings of the shafts are covered in oil and dust, so the system components must be able to operate in these conditions. I chose inductive sensors, which measure the teeth of the gearing (sprocket-wheels) where it is possible; otherwise the shaft is equipped with a toothed disc, which can be measured in the same way. The operating principle of the inductive sensors is based on electromagnetic waves, so the contamination of oil and dust does not interfere with the measurement. The system's control unit is a Smart Relay, which funcitons as a more compact and simpler PLC. It operates on a $12$~V supply, matching the systems's voltage on the header. The analog signals of the sensors are fed into the relay, which controls an industrial light, and activates it, when the torque limiter is in use. The device operates using Ladder Diagram software, which processes the analog signals to calculate rotational speeds and make decisions to alert the driver.
+
+Through the development of this system I gained valuable insights into the process of designing such a device, the challenges one faces, and the relationships one can build during the process. The complexity of the task prompted me to consult various sources, all of which contributed to this work's depth, perspective and overall satisfaction.
 
 \vspace{0.5cm}
 \paragraph{Keywords} \emph{\keywords}  % A kulcsszavak a fő tex fájlban vannak definiálva
