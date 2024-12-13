@@ -44,7 +44,7 @@ A kapacitív érzékelők elmozdulás és pozíció meghatározására is alkalm
  A \textit{monopoláris} kapacitív érzékelő, egy kondenzátor, vagyis két fegyverzet alkalmazását jelenti. Az egyik fegyverzeten mérhető az elektromos jel, a másik fegyverzet azonban lehet például egy vezető felület is, mint ahogy a \ref{kapacitiv_kabel} ábrán látható szenzor kialakítása is mutatja. Ezek a szenzorok akár 40 kHz-es mérési frekvenciát is képesek produkálni, illetve alacsonyabb pontossággal akár nem vezető felületeket mérésére is alkalmasak.
 \begin{figure}
 	\centering
-	\includegraphics{figures/kapacitiv_szenzor_kabeles.png}
+	\includegraphics[width=.7\columnwidth]{figures/kapacitiv_szenzor_kabeles.png}
 	\caption{Monopoláris, egylemezes kondenzátor vezető felületek távolság mérésére alkalmazva. (\textbf{a}) metszetként; (\textbf{b}) kívülről \cite{Fraden2016a}.}
 	\label{kapacitiv_kabel}
 \end{figure}
@@ -52,7 +52,7 @@ Egy másik kialakítás a differenciál kapacitív érzékelő, amely során há
 Egy kapacitív hidat látunk a \ref{kapacitiv_hid} ábrán. A szenzor két párhuzamosan elrendezett elektróda készletből állnak, konstans $d$ távolsággal közöttük, melyek közül a négy lemezből álló készlet statikus, míg a két fegyverzet elmozdulhat. A négy lemez keresztbe van kötve, így kialakítva az úgynevezett Wheatstone-híd architektúrát, melynek előnye, hogy a mérés linearitását megtartja, valamint a zajok megjelenését is minimalizálja. A párhuzamos lemezek kapacitása arányos a vele szemben lévő fegyverzetek területével, így a két kondenzátor egymáshoz képesti kisebb elmozdulását vagy elfordulását is képes detektálni. 
 \begin{figure}
 	\centering
-	\includegraphics{figures/kapacitiv_hid.png}
+	\includegraphics[width=\columnwidth]{figures/kapacitiv_hid.png}
 	\caption{Párhuzamos lemezű kapacitív híd szenzorbeli elhelyezése (\textbf{a}) és áramköri rajz (\textbf{b}) \cite{Fraden2016a}.}
 	\label{kapacitiv_hid}
 \end{figure}
@@ -171,7 +171,7 @@ A giroszkópok a szögelfordulás valamint a szögsebesség mérésére is egyfo
 A \textit{mechanikai} giroszkóp fő alkatrésze egy motorral meghajtott nagy impulzusmomentummal rendelkező kerék, amely a forgástengelyt a perdületének köszönhetően állandó helyen tartja, így referenciaként tud működni. A szenzor külső szerkezete van hozzáerősítve a mérendő testhez, a kimenet pedig a rögzített keret a kerék forgástengelyének hajlásszögének mértéke lesz. A szögelfordulás mérésére kétféle kialakítás létezik, a szabad- és integráló giroszkóp (angol: free, rate-integrating/integratin gyroscope). A szabadon mozgó mechanizmus közvetlen elfordulás mérésére képes, két merőleges tengelyen, amely két tekercsel ellátott keret alkalmazásán keresztül történik. A szerkezet sematikus ábráján láthatjuk ezt a kialakítást (\ref{freegyro} ábra). 
 \begin{figure}
 	\centering
-	\includegraphics[width=\columnwidth/2]{figures/freegyro.png}
+	\includegraphics[width=.7\columnwidth]{figures/freegyro.png}
 	\caption{A szabadon mozgó giroszkóp kialakításának sematikus rajza \cite{Morris2016b}.}
 	\label{freegyro}
 \end{figure}
@@ -229,10 +229,10 @@ Az orsó forgásával a csészében örvényáramok keletkeznek, amelyek az áll
 
 \subsubsection{Szögsebesség mérő giroszkópok}
 
-A \textit{sebességérzékelő} giroszkóp (angol: rate gyroscope) közel azonos felépítéssel rendelkezik, mint a \ref{lingiro} fejezetben tárgyalt integráló giroszkóp, azzal a különbséggel hogy egy torziós rugóval egészül ki, ezzel limitálva a keret forgómozgását, ahogy a \ref{rategyro} ábra is mutatja. A szenzor abszolút szögsebességet mér, gyakran jelek stabilizálására alkalmazzák navigációs rendszerekben. A felbontása $0,01\frac{\degree}{s}$, a mérési tartománya $50\frac{\degree}{s}$-ig terjed.
+A \textit{sebességérzékelő} giroszkóp (angol: rate gyroscope) közel azonos felépítéssel rendelkezik, mint a \ref{lingiro} fejezetben tárgyalt integráló giroszkóp, azzal a különbséggel hogy egy torziós rugóval egészül ki, ezzel limitálva a keret forgómozgását, ahogy a \ref{rategyro} ábra is mutatja. A szenzor abszolút szögsebességet mér, gyakran jelek stabilizálására alkalmazzák navigációs rendszerekben. A felbontása $0,01\,\frac{\degree}{s}$, a mérési tartománya $50\,\frac{\degree}{s}$-ig terjed.
 \begin{figure}
 	\centering
-	\includegraphics[width=\columnwidth*5/10]{figures/rategyro.png}
+	\includegraphics[width=\columnwidth*7/10]{figures/rategyro.png}
 	\caption{A sebességérzékelő giroszkóp sematikus ábrája \cite{Morris2016b}.}
 	\label{rategyro}
 \end{figure}
@@ -274,7 +274,7 @@ A \ref{plckep} ábrán látható egy programozható logikai vezérlő (PLC: prog
 \begin{figure}
 	\centering
 	\includegraphics[width=\columnwidth*5/10]{figures/siemens_plc.jpeg}
-	\caption{Siemens Simatic S7-1500 PLC. forrás: \cite{siemens_plc}}
+	\caption{Siemens Simatic S7-1500 PLC \cite{siemens_plc}.}
 	\label{plckep}
 \end{figure}
 A PLC-k működtetésére több programnyelvet is alkalmaznak, melyek az IEC Standard 1131-3 szabványban vannak rögzítve, ez az öt nyelv a legtöbb gyártó által támogatott nyelveket lefedi \cite{Baresi1998}: 

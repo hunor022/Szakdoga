@@ -94,7 +94,7 @@ A szenzor választásakor egyes paramétereknek a környezeti kialakításnak ke
 
 \subsubsection{Választott szenzor}
 
-A követelmények megfelelő szenzornak Datalogic IS-12-H1-S2 induktív szenzor rövid verzióját választottam, amely M12-es csatlakozóval és beszerelési vastagsággal, $8$~mm kapcsolási távolsággal, amelynek mérési frekvenciája $500$~Hz, így bőven meghaladja a követelményt \cite{datalogic_catalog}. A szenzor a beszerelési felületre merőlegesen végzi a mérést, a forgás tengelyével szintén derékszöget zár be, ezáltal a tárcsa vagy kerék fogainak mérésére képes. Ez a szenzor analóg feszültségjelet továbbít, az érzékelt test távolságának függvényében, amelyt egy három erezetű kábel egyik szálán továbbítanak, ahol a másik két erezet pedig a tápfeszültség és földelés. A \ref{kabelezes_1} és \ref{kabelezes_2} ábrák mindkét irányból vázlatszerűen mutatják a három szenzorból érkező kábelek elvezetését, amelyek a (jelen modellben nem ábrázolt) pneumatikus és egyéb kábelek útját követik, valamint az adatfeldolgozó helyét jelző dobozt, amelyek a tápfeszültség és az analóg jeleket továbbítják. Ehhez három darab egyenként legalább hat méter hosszú, 3 erezetű M12-es csatlakozóval rendelkező kábelt ajánlanék.
+A követelmények megfelelő szenzornak Datalogic IS-12-H1-S2 induktív szenzor rövid verzióját választottam, amely M12-es csatlakozóval és beszerelési vastagsággal, $8$~mm kapcsolási távolsággal, amelynek mérési frekvenciája $500$~Hz, így bőven meghaladja a követelményt \cite{datalogic_catalog}. A szenzor a beszerelési felületre merőlegesen végzi a mérést, a forgás tengelyével szintén derékszöget zár be, ezáltal a tárcsa vagy kerék fogainak mérésére képes. Ez a szenzor analóg feszültségjelet továbbít, az érzékelt test távolságának függvényében, amelyt egy három erezetű kábel egyik szálán továbbítanak, ahol a másik két erezet pedig a tápfeszültség és földelés. A \ref{kabelezes_1} és \ref{kabelezes_2} ábrán lila vázlatos vonalakkal láthatóak két szemszögből a kábelek tervezett elvezetései, melyek a (jelen modellben nem ábrázolt) pneumatikus vezetékek útját követik. Ehhez három darab egyenként legalább hat méter hosszú, 3 erezetű M12-es csatlakozóval rendelkező kábelt ajánlanék.
 \begin{figure}
 	\centering
 	\includegraphics[width=\columnwidth*6/10]{figures/rajzolt_kabelezes_1.jpg}
@@ -156,18 +156,18 @@ A programozható relék esetén gyakori a $12$~V-os változat, habár széles . 
 	\scalebox{0.73}{
 		\begin{tabular}{|l||l|l|l|l|}
 			\hline
-			& \begin{tabular}[c]{@{}l@{}}Schneider Electric\\ Zelio Logic \cite{zelio_adatlap}\end{tabular} & IDEC SmartRelay \cite{idec_adatlap} & Siemens LOGO! 8\cite{siemens_logo_adatlap} & Eaton Easy \cite{eaton_easy_adatlap} \\ \hhline{|=||=|=|=|=|}
+			& \begin{tabular}[c]{@{}l@{}}Schneider Electric\\ Zelio Logic \cite{zelio_adatlap}\end{tabular} & \begin{tabular}[c]{@{}l@{}}IDEC SmartRelay\\ \cite{idec_adatlap}\end{tabular} & Siemens LOGO! 8\cite{siemens_logo_adatlap} & Eaton Easy \cite{eaton_easy_adatlap} \\ \hhline{|=||=|=|=|=|}
 			Modellszám           & SR2B121JD                                                                & FL1F-B12RCE                                                 & 6ED1052-2MD08-0BA2                                                     & EASY-E4-UC-12RCX1                                                                     \\ \hline
 			Feszültség           & 12V                                                                      & 12/24V                                                      & 12/24V                                                                 & 12/24V                                                                                \\ \hline
 			Bemenetek            & 4 DI + 4 AI                                                              & 4 DI + 2 AI                                                 & 4 DI + 4 DI/AI                                                         & 4 DI + 4 DI/AI                                                                        \\ \hline
 			Kimenetek            & 4 DO                                                                     & 8 DO                                                        & 4 DO                                                                   & 4 DO                                                                                  \\ \hline
 			Számítási frekvencia & 1 kHz                                                                    & 5 kHZ                                                       & 5 kHz                                                                  & 5 kHz                                                                                 \\ \hline
 			Kommunikáció         & N/A                                                                      & N/A                                                         & Modbus TCP                                                             & MODBUS TCP/IP                                                                         \\ \hline
-			Program felület      & \begin{tabular}[c]{@{}l@{}}ZelioSoft 2\\ (LD, FBD)\end{tabular}          & \begin{tabular}[c]{@{}l@{}}WingLGC\\ (LD, FBD)\end{tabular} & \begin{tabular}[c]{@{}l@{}}LOGO! Soft Comfort\\ (LD, FBD)\end{tabular} & \begin{tabular}[c]{@{}l@{}}EASYSOFT-SWLIC/easySoft7\\ (EDP, LD, FBD, ST)\end{tabular} \\ \hline
+			Program felület      & \begin{tabular}[c]{@{}l@{}}ZelioSoft 2\\ (LD, FBD)\end{tabular}          & \begin{tabular}[c]{@{}l@{}}WingLGC\\ (LD, FBD)\end{tabular} & \begin{tabular}[c]{@{}l@{}}LOGO! Soft Comfort\\ (LD, FBD)\end{tabular} & \begin{tabular}[c]{@{}l@{}}EASYSOFT-SWLIC\\ (LD, FBD, ST)\end{tabular} \\ \hline
 			Internet csatlakozó  & Nincs                                                                    & Ethernet RJ45                                               & Ethernet RJ45                                                          & Ethernet RJ45                                                                         \\ \hline
 			SD memory            & Nincs                                                                    & MicroSD                                                     & MicroSD                                                                & Nincs                                                                                 \\ \hline
 			Méret                & 90x68x10                                                                 & 90x71,5x58                                                  & 90x71,5x58                                                             & 90x72x58                                                                              \\ \hline
-			Hozzávetőleges Költség (Ft) & 75 000                                        & 69 000                 & 58 000                                                      & 72 000\\ \hline
+			Hozzávetőleges Költség & 75 000 Ft                                        & 69 000 Ft                & 58 000 Ft                                                     & 72 000 Ft\\ \hline
 		\end{tabular}
 	}
 	\caption{$12$~V-os programozható relék összehasonlítása}
@@ -193,7 +193,7 @@ Az algoritmus feladata, hogy a \ref{jelek} fejezetben tárgyalt fordulatszámot 
 \subsection{Elhelyezés}
 %----------------------------------------------------------------------------
 
-A irányítási rendszer, vagyis a relé és a jelzőfény, illetve ezekhet tartozó, valamint a szenzoroktól jövő táp- és adatkábelekhez egy IP védett doboz felhasználását ajánlanám. A doboznak két alkatrészt kell tartalmaznia, valamint a külsejére szerelhetőnek kell lennie a harmadiknak. A programozható relé dimenziói: $90$x$71,5$x$58$~mm, a router mérete: $58$x$58$x$25$~mm, a jelzőfény átmérője pedig $22$~mm, a beszerelés után pedig $37$~mm hosszú a dobozban található része. Így a kényelmes elrendezés végett üres teret hagyva a dobozt legalább $200$x$100$x$80$~mm-re méretezném. Az elérhető IP65-ös, szabványos kötődobozok közül a $200$x$155$x$80$~mm-es méret ennek megfelelő. A dobozból kijövő kábelek esetén pedig az egyszerűség és szerelhetőség végett tömszelence beszerelése lenne a választásom. A doboz elhelyezése az adapter silózó felőli oldalának fenti részén, a \ref{doboz_elhelyezes} ábrán kijelölt helyen lenne ideális.
+A irányítási rendszer, vagyis a relé és a jelzőfény, illetve ezekhet tartozó, valamint a szenzoroktól jövő táp- és adatkábelekhez egy IP védett doboz felhasználását ajánlanám. A doboznak két alkatrészt kell tartalmaznia, valamint a külsejére szerelhetőnek kell lennie a harmadiknak. A programozható relé dimenziói: $90$x$71,5$x$58$~mm, a router mérete: $58$x$58$x$25$~mm, a jelzőfény átmérője pedig $22$~mm, a beszerelés után pedig $37$~mm hosszú a dobozban található része. Így a kényelmes elrendezés végett üres teret hagyva a dobozt legalább $200$x$100$x$80$~mm-re méretezném. Az elérhető IP65-ös, szabványos kötődobozok közül a $200$x$155$x$80$~mm-es méret ennek megfelelő. A dobozból kijövő kábelek esetén pedig az egyszerűség és szerelhetőség végett tömszelence beszerelése lenne a választásom. A doboz elhelyezése az adapter silózó felőli oldalának fenti részén, a \ref{doboz_elhelyezes} ábrán lila színnel kijelölt helyen lenne ideális.
 \begin{figure}
 	\centering
 	\includegraphics[width=\columnwidth*7/10]{figures/rajzolt_doboz.jpg}
@@ -218,3 +218,24 @@ A fejlesztett rendszer alapvető feladata, hogy a nyomatékhatároló megcsúsz�
 
 A jelzés a nyomatékhatároló tönkremenetele esetén a probléma forrását egyértelműen jelzi, valamint a fordulatszámok kiírása esetén további problémák diagnosztizálásában asszisztálhat. A három fordulatszám érték segíthet lokalizálni az esetleges hibák eredetét, valamint akár összehasonlításnak is alkalmazható korábbi teljesítményekhez.
 
+%----------------------------------------------------------------------------
+\section{Továbbfejlesztési lehetőségek}
+%----------------------------------------------------------------------------
+
+\subsection{Alternatív kialakítású nyomatékhatároló}
+
+A Hevesgép Kft. által gyártott felszedő adaptereken egy alternatív, silózó felé elhelyezett nyomatékhatároló is létezik, amely a \ref{hatso_nyomhat} képen látszik. A feladat továbbfejlesztéseként ennek a nyomatékhatárolónak a ki- és bemeneti oldalának a fordulatszámmérése is megvalósítható. A nehézségét fokozza, hogy ez a tengely az adapter külsején helyezkedik el, valamint a fordulatszáma is jóval magasabb, mint a dolgozatban számolt elrendezésnek, hiszen ez a silózóból érkező közvetlen fordulatszámot továbbítja ($340 - 680$~rpm).
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth*7/10]{figures/hatso_nyomatekhatarolo.jpg}
+	\caption{Az alternatív, hátsó oldali nyomatékhatároló képe.}
+	\label{hatso_nyomhat}
+\end{figure}
+
+\subsection{Gyártói szabványos kommunikáció}
+
+Ahogyan a \ref{visszajelz} fejezetben említésre került, az adapter silózóval való csatlakozásánál, többek között, jelek átadására is van lehetőség. Az egyes gyártók eltérő kialakítású csatlakozókat használnak, így a berendezésnek nagy előrelépés lenne, ha minden egyes szabványos csatlakozó fel lenne térképezve -- ehhez a gyártókkal kéne egyeztetni --, hiszen sok lehetőséget megnyitna a fejlesztés szempontjából. Ezen az úton a silózó fülkéjében található kijelzők és tájékoztató berendezésekhez hozzáférést kapna a rendszer, így integrálva lehetne bizonyos információkat átadni, amelyhez természetesen az összes visszajelzőrendszer ismerete is szükséges lenne.
+
+\subsection{Kivitelezés}
+
+Talán a feladat legkézenfekvőbb továbbfejlesztési lehetősége, a berendezés alkatrészeinek megrendelése, felszerelése, a szoftver felprogramozása és a rendszer kipróbálása, letesztelése, megvalósítása.
